@@ -19,12 +19,12 @@
 	mv atlassian-bamboo-6.8.0 bamboo
 	cd /opt/bamboo/
 	
-  vi /opt/bamboo/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties
+  	vi /opt/bamboo/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties
 	---------------------------------------------------------------------
 	bamboo.home=/home/bamboo/bamboo-home
 	-------------------------------------------------------
 	
-  mkdir -p /home/bamboo/bamboo-home
+  	mkdir -p /home/bamboo/bamboo-home
 	useradd -s /bin/bash bamboo
 	
 	vi /etc/systemd/system/bamboo.service
@@ -94,3 +94,38 @@
 	chmod 777 /home/bamboo/ -R
 	
 	service bamboo start
+
+# Go to UI and give below command
+	<IP-address>:8085
+# Create Atlassian account and goto licenses and create new license
+	https://id.atlassian.com/
+	
+![image](https://user-images.githubusercontent.com/68885738/89013993-7d2abd80-d332-11ea-9aaa-59aa8b2462f5.png)
+
+Next
+
+![image](https://user-images.githubusercontent.com/68885738/89014104-a51a2100-d332-11ea-97ce-d17efb139a64.png)
+
+Next
+
+![image](https://user-images.githubusercontent.com/68885738/89014188-c5e27680-d332-11ea-831c-38d382af309b.png)
+
+Verify this with your email
+
+Give below link
+
+https://my.atlassian.com/products/index
+
+![image](https://user-images.githubusercontent.com/68885738/89015157-3dfd6c00-d334-11ea-8ec8-1901084a45f7.png)
+
+Click on New Trial License
+
+![image](https://user-images.githubusercontent.com/68885738/89015269-62f1df00-d334-11ea-925d-b1ff02b0b6e6.png)
+
+![image](https://user-images.githubusercontent.com/68885738/89015383-93397d80-d334-11ea-8abf-71606f84312e.png)
+
+Give Server ID which one need license and click on Generate License
+
+Copy License and paste in our Bamboo installation and then complete steps
+
+
