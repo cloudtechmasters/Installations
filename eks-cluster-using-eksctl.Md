@@ -1,9 +1,11 @@
 # EKS clustercreation using eksctl:
 
-# Take EC2 Instance with t2.xlarge instance type
-# Create IAM Role for eks-cluster and attach to ec2-instance
+# Step1:
+	Take EC2 Instance with t2.xlarge instance type
+# Step2: 
+	Create IAM Role for eks-cluster and attach to ec2-instance
 
-# Install kubectl
+# Step3: Install kubectl
 	curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl
 	chmod +x ./kubectl
 	mkdir -p $HOME/bin
@@ -13,27 +15,27 @@
 	source $HOME/.bashrc
 	kubectl version --short --client
 
-Install eksctl:
+# Step4: Install eksctl:
 
 	curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 	sudo mv /tmp/eksctl /usr/bin
 	eksctl version
 
-# Cluster creation:
+# Step5: Cluster creation:
 
 	eksctl create cluster --name=eksdemo \
                       --region=us-east-1 \
                       --zones=us-east-1a,us-east-1b \
                       --without-nodegroup 
 					  
-# Add Iam-Oidc-Providers:
+# Step6: Iam-Oidc-Providers:
 
 	eksctl utils associate-iam-oidc-provider \
  	   --region us-east-1 \
  	   --cluster eksdemo \
  	   --approve
 
-# Create node-group:
+# Step7: Create node-group:
 
 	eksctl create nodegroup --cluster=eksdemo \
                        --region=us-east-1 \
