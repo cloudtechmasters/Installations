@@ -1,4 +1,4 @@
-# EKS clustercreation using eksctl:
+# EKS cluster creation using eksctl:
 
 # Step1:
 	Take EC2 Instance with t2.xlarge instance type
